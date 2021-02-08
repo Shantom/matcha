@@ -1,0 +1,10 @@
+pp:
+  tokens:
+    - 21e8053c-80e9-4869-add7-27fb201c8345
+
+
+logging:
+  file:
+    name: ./logs/logger.log
+  level:
+    root: info

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/webjars/layui/2.5.7/css/layui.css"/>
+</head>
+<body>
+
+
+<table class="layui-table">
+    <thead>
+    <tr>
+        <th>资本开支</th>
+        <th>2019</th>
+        <th>2018</th>
+        <th>2017</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr th:each="one:${expend}">
+        <td th:text="${one.key}"></td>
+        <div th:each="val:${one.value}">
+            <td th:text="${val}"></td>
+        </div>
+
+    </tr>
+
+    </tbody>
+</table>
+
+
+</body>
+</html>
