@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -31,6 +33,12 @@ class CashQuestionInvestmentServiceTest {
         System.out.println(resultData);
 
 
+    }
+
+    @Test
+    public void test3(){
+        List<Integer> collect = IntStream.range(10, 1).boxed().collect(Collectors.toList());
+        System.out.println(collect);
     }
 
 

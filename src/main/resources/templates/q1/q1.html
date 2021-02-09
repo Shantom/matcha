@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="/webjars/layui/2.5.7/css/layui.css"/>
+    <script src="/webjars/layui/layui.js"></script>
 </head>
 <body>
 
@@ -12,24 +13,70 @@
     <thead>
     <tr>
         <th>资本开支</th>
-        <th>2019</th>
-        <th>2018</th>
-        <th>2017</th>
+        <div th:each="year:${fields}">
+            <th th:text="${year}"></th>
+        </div>
+        <th>总计</th>
+
     </tr>
     </thead>
-
     <tbody>
     <tr th:each="one:${expend}">
         <td th:text="${one.key}"></td>
         <div th:each="val:${one.value}">
             <td th:text="${val}"></td>
         </div>
-
     </tr>
-
+    <thead>
+    <tr>
+        <th>自由现金流</th>
+        <div th:each="year:${fields}">
+            <th th:text="${year}"></th>
+        </div>
+        <th>总计</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="one:${freecash}">
+        <td th:text="${one.key}"></td>
+        <div th:each="val:${one.value}">
+            <td th:text="${val}"></td>
+        </div>
+    </tr>
+    <thead>
+    <tr>
+        <th>净利润</th>
+        <div th:each="year:${fields}">
+            <th th:text="${year}"></th>
+        </div>
+        <th>增长</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="one:${netpop}">
+        <td th:text="${one.key}"></td>
+        <div th:each="val:${one.value}">
+            <td th:text="${val}"></td>
+        </div>
+    </tr>
     </tbody>
 </table>
 
-
+<table class="layui-table">
+    <thead>
+    <tr>
+        <th>小熊值</th>
+        <th>小熊基本值</th>
+        <th>小熊增长值</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="one:${basic}">
+        <td th:text="${one.key}"></td>
+        <td th:text="${one.value}"></td>
+        <td th:text="${inc[one.key]}"></td>
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>

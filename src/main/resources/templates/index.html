@@ -4,15 +4,19 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="/webjars/layui/2.5.7/css/layui.css"/>
+    <script src="/webjars/layui/layui.js"></script>
 
 </head>
 <body>
 
 <form class="layui-form" action="/s/q1" method="post">
 
-    <input type="text" name="stock" value="000895" required lay-verify="required" placeholder="请输入股票代码"  class="layui-input">
-
-    <button class="layui-btn" lay-submit lay-filter="formDemo">三拷问之一投资</button>
+    <div class="layui-input-inline">
+        <input type="text" name="stock" value="000895, 002726, 002840, 002330" required lay-verify="required" placeholder="请输入股票代码"  class="layui-input">
+    </div>
+    <div class="layui-input-inline">
+        <button class="layui-btn" lay-submit lay-filter="formDemo">三拷问之一投资</button>
+    </div>
 </form>
 
 
