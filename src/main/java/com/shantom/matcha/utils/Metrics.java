@@ -9,6 +9,14 @@ public class Metrics {
         return Arrays.asList(getExpend(),getNetpop(),getFreecash());
     }
 
+    public static List<String> getMetricsForQ2(){
+        return Arrays.asList(getCCC());
+    }
+
+    public static String getCCC(){
+        return Metrics.getMetric(Metrics.G.YEAR, Metrics.E.ACCU, Metrics.TF.CCC);
+    }
+
     public static String getExpend(){
         return Metrics.getMetric(Metrics.G.YEAR, Metrics.E.ACCU, Metrics.TF.EXPEND);
     }
@@ -57,6 +65,10 @@ public class Metrics {
          * 自由现金流量
          */
         public final static String FREECASH = "m.fcf";
+        /**
+         * 净营业周期CCC
+         */
+        public final static String CCC = "m.m_ds";
 
     }
 }
